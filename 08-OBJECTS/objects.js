@@ -12,42 +12,47 @@ let dog = {
     burglarBiter: true
 };
 
-//console.log(dog);
+
 
 // accessing properties of the object using the dot(.) operator
-// console.log(dog.dogName);
-// console.log(dog.age);
+console.log(dog.dogName);
+console.log(dog.age);
 
 // accessing properties of the object using the array([""]) operator
-// console.log(dog["color"]);
-// console.log(dog["weight"]);
+console.log(dog["color"]);
+console.log(dog["weight"]);
 
 //updating our object
-// dog.dogName = "Nate Dogg";
-// dog["burglarBiter"] = false;
+dog.dogName = "Nate Dogg";
+dog["burglarBiter"] = false;
 
-// console.log(dog);
+console.log(dog);
 
-// let variable = "age";
-// console.log(dog[variable]);
+let variable = "age";
+console.log(dog[variable]);
 
-// variable = "breed";
-// console.log(dog[variable]);
+variable = "dogName";
+console.log(dog[variable]);
 
 // creating object inside an object
-// let company = {
-//     companyName: "Dangote",
-//     activities: ["manufacturing", "manufacturing toys", "improving kids health"],
-//     address: {
-//         street: "Falomo Bridge",
-//         number: 12,
-//         zipcode: 33116,
-//         city: "Ikoyi",
-//         state: "Lagos"
-//     },
-//     yearOfEstablishment: 2021
-// };
-// console.log(company);
+let company = {
+    companyName: "Dangote",
+    activities: ["manufacturing", "manufacturing toys", "improving kids health", { subtype: "Toys"}],
+    address: {
+        street: "Falomo Bridge",
+        number: 12,
+        zipcode: 33116,
+        city: "Ikoyi",
+        state: "Lagos"
+    },
+    yearOfEstablishment: 2021
+};
+//console.log(company['activities'[2]]);
+// console.log(company.address.state);
+console.log(company.activities[3].subtype)
+
+
+
 // console.log(typeof company.address.number);
 // console.log(company.address.city);
 

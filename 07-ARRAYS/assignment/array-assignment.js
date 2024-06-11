@@ -13,3 +13,14 @@ HINT: Remember that an array needs a value in each position, and that value can 
 
 GOOD LUCK 😀
 */
+
+const theList = ['Laurence', 'Svekis', true, 35, null, undefined, {test: 'one', score: 55}, ['one', 'two']];
+
+theList.pop();
+theList.shift();
+theList.unshift("FIRST");
+theList[3] = "hello World";
+theList[2] = "MIDDLE";
+let newList = theList.slice(0, 4);
+newList.push("LAST");
+console.log(newList);
