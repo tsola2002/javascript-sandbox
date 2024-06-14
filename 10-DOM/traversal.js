@@ -2,7 +2,7 @@
 
 // console.dir(document.body.children.forest.children.tree2.children. shrubbery.children.treasure);
 
-// console.dir(document.body.childNodes[4].childNodes[3].childNodes[1].childNodes[1]);
+//console.dir(document.body.childNodes[4].childNodes[3].childNodes[1].childNodes[1]);
 
 // console.dir(document.body.childNodes[5].childNodes[3].childNodes[1].childNodes[1]);
 
@@ -34,5 +34,5 @@
 
 // console.dir(document.querySelectorAll(".tree2"));
 
-console.dir(document.querySelectorAll(".output"));
+//console.dir(document.querySelectorAll(".output"));
 

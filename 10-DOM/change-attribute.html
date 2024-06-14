@@ -35,13 +35,19 @@
 
     <div id="shape" class="square"></div>
 
-    <button onclick="changeAttribute()">Change attributes...</button>
+    <!-- <button onclick="changeAttribute()">Change attributes...</button> -->
+    <button  onclick="deleteAttribute()">Change attributes...</button>
     <script>
         function changeAttribute(){
             let el = document.getElementById("shape");
             el.setAttribute("style", "background-color: red; border: 1px solid black");
             el.setAttribute("id", "new");
             el.setAttribute("class", "circle");
+        }
+
+        function deleteAttribute(){
+            let el = document.getElementById("shape")
+            el.removeAttribute("class");
         }
     </script>
 </body>

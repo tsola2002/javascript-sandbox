@@ -4,12 +4,11 @@
 
 //console.dir(window.location);
 
-// console.dir(location.ancestorOrigins.length);
+//console.dir(location.ancestorOrigins.length);
 
 //console.dir(document);
+//const element = document.querySelector("h1");
 
-// const element = document.querySelector("h1");
+// const element = document.querySelectorAll(".output");
 
-const element = document.querySelectorAll(".output");
-
-console.dir(element);
+// console.dir(element);
