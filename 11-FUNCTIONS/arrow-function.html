@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow Function</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
+
+      div {
+        background-color: purple;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+
+      .box {
+        height: 200px;
+        width: 200px;
+        padding: 20px;
+        margin: 0 50px;
+        display: inline-block;
+        border: 1px solid black;
+      }
+
+      #dragme {
+        background-color: red;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        color: white;
+        text-align: center;
+      }
+
+      h2 {
+        color: white;
+        font-size: 30px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ARROW FUNCTIONS</h1>
+
+    <script>
+      //   function doingStuff(x) {
+      //     console.log(x);
+      //   }
+
+      //   doingStuff("omatsola");
+
+      // REWRITE THE SAME FUNCTION USING ARROW FUNCTION
+      let doingStuff = (x) => console.log(x);
+      doingStuff("sobotie");
+
+      // arrow function that takes more than 1 parameter
+      let multiplyTwoNumbers = (x, y) => console.log(x * y);
+      multiplyTwoNumbers(5, 3);
+
+      let sayHi = () => console.log("hi");
+      sayHi();
+
+      const arr = ["squirrel", "alpaca", "buddy"];
+      arr.forEach((e) => console.log(e));
+
+      //SPREAD OPERATOR
+      let spread = ["so", "much", "fun"];
+      let message = ["JavaScript", "is", ...spread, "and", "very", "powerful"];
+      console.log(message);
+
+      function addTwoNumbers(x, y) {
+        console.log(x + y);
+        return x + y;
+      }
+
+      let nums = [5, 9];
+      addTwoNumbers(...nums);
+
+      function addFourNumbers(x, y, z, a) {
+        console.log(x + y + z + a);
+      }
+
+      let nums2 = [5, 9];
+
+      let nums3 = [6, 7];
+
+      addFourNumbers(...nums2, ...nums3);
+
+      function someFunction(param1, ...param2) {
+        console.log(param1, param2);
+      }
+      someFunction("hi", "there!", "How are you?");
+
+      let result = addTwoNumbers(4, 5);
+      console.log(result);
+
+      let resultsArr = [];
+
+      for (let i = 0; i < 10; i++) {
+        let result = addTwoNumbers(i, 2 * i);
+        resultsArr.push(result);
+      }
+
+      console.log(resultsArr);
+    </script>
+  </body>
+</html>
