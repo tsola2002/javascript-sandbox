@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Capture</title>
+    <title>Key press event</title>
     <style>
       body {
         height: 100vh;
@@ -38,8 +38,8 @@
   <body>
     <h1>KEY EVENT HANDLER</h1>
     <div id="wrapper">JavaScript is fun!</div>
-    <input type="text" name="myNum1" onkeypress="numCheck()" />
-    <input type="text" name="myNum2" onkeypress="numCheck2()" />
+    <input type="text" name="myNum1" placeholder="myNum1" onkeypress="return numCheck()" onpaste="return false"/>
+    <input type="text" name="myNum2" placeholder="myNum2" onkeypress="return numCheck2()" onpaste="return false"/>
 
     <script>
       function numCheck() {

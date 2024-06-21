@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Submission</title>
+    <title>ANOTHER PAGE</title>
     <style>
       body {
         height: 100vh;
@@ -31,13 +31,16 @@
     </style>
   </head>
   <body>
-    <h1>Form Submission</h1>
+    <h1>ANOTHER PAGE</h1>
 
-    <form action="anotherpage.html" method="get">
-      <input type="text" placeholder="name" name="name" />
-      <input type="submit" value="send" />
-    </form>
-
-    <script></script>
+    <script>
+      let q = window.location.search;
+      let params = new URLSearchParams(q);
+      // let name = params.get("name");
+      let firstName = params.get("firstName");
+      let lastName = params.get("lastName");
+      let age = params.get("age");
+      console.log(firstName, lastName, age);
+    </script>
   </body>
 </html>
