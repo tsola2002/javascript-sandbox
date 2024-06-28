@@ -54,65 +54,204 @@
     <h1>ARROW FUNCTIONS</h1>
 
     <script>
-      //   function doingStuff(x) {
-      //     console.log(x);
-      //   }
+      // function doingStuff(x) {
+      //   console.log(x);
+      // }
 
-      //   doingStuff("omatsola");
+      // doingStuff("omatsola");
 
       // REWRITE THE SAME FUNCTION USING ARROW FUNCTION
-      let doingStuff = (x) => console.log(x);
-      doingStuff("sobotie");
+      // let addingNumbers = (x = 2, y = 3) => console.log(x + y);
+      // addingNumbers();
 
       // arrow function that takes more than 1 parameter
-      let multiplyTwoNumbers = (x, y) => console.log(x * y);
-      multiplyTwoNumbers(5, 3);
+      // let multiplyTwoNumbers = (x, y) => console.log(x * y);
+      // multiplyTwoNumbers(5, 3);
 
-      let sayHi = () => console.log("hi");
-      sayHi();
+      // let sayHi = () => console.log("hi");
+      // sayHi();
 
-      const arr = ["squirrel", "alpaca", "buddy"];
-      arr.forEach((e) => console.log(e));
+      // const arr = ["squirrel", "alpaca", "buddy"];
+      // arr.forEach((e) => console.log(e));
 
       //SPREAD OPERATOR
-      let spread = ["so", "much", "fun"];
-      let message = ["JavaScript", "is", ...spread, "and", "very", "powerful"];
-      console.log(message);
+      // let spread = ["so", "much", "fun"];
+      // let message = ["JavaScript", "is", ...spread, "and", "very", "powerful"];
+      // console.log(message);
 
-      function addTwoNumbers(x, y) {
-        console.log(x + y);
-        return x + y;
+      // function addTwoNumbers(x, y) {
+      //   console.log(x + y);
+      //   return x + y;
+      // }
+
+      // let nums = [5, 9];
+      // addTwoNumbers(...nums);
+
+      // function addFourNumbers(x, y, z, a) {
+      //   console.log(x + y + z + a);
+      // }
+
+      // let nums2 = [5, 9];
+
+      // let nums3 = [6, 7];
+
+      // addFourNumbers(...nums2, ...nums3);
+
+      // function someFunction(param1, ...param2) {
+      //   console.log(param1, param2);
+      // }
+      // someFunction("hi", "there!", "How are you?");
+
+      // let addTwoNumbers = (x, y) => {
+      //   console.log(x + y);
+      //   return x + y;
+      // };
+
+      // let result = addTwoNumbers(4, 5);
+      // console.log(result);
+
+      // let resultsArr = [];
+
+      // for (let i = 0; i < 10; i++) {
+      //   let result = addTwoNumbers(i, 2 * i);
+      //   resultsArr.push(result);
+      // }
+
+      // console.log(resultsArr);
+
+      // LOCAL SCOPE
+      // function testAvailability(x) {
+      //   console.log("Available here:", x);
+      // }
+
+      // testAvailability("Hi!");
+      // console.log("Not available here:", x);
+
+      // function testAvailability() {
+      //   let y = "Local variable!";
+      //   console.log("Available here:", y);
+      // }
+
+      // testAvailability();
+      // console.log("Not available here:", y);
+
+      // function testAvailability() {
+      //   let y = "I'll return";
+      //   console.log("Available here:", y);
+      //   return y;
+      // }
+
+      // let z = testAvailability();
+      // console.log("Outside the function:", z);
+      // console.log("Not available here:", y);
+
+      // function doingStuff() {
+      //   if (true) {
+      //     const x = "local";
+      //   }
+      //   console.log(x);
+
+      // }
+
+      // doingStuff();
+
+      // let globalVar = "Accessible everywhere!";
+      // console.log("Outside function:", globalVar);
+
+      // function creatingNewScope(x) {
+      //   console.log("Access to global vars inside function.", globalVar);
+      // }
+
+      // creatingNewScope("some parameter");
+
+      // console.log("Still available:", globalVar);
+
+      // let x = "global";
+
+      // function doingStuff() {
+      //   let x = "local";
+      //   console.log(x);
+      // }
+
+      // doingStuff(); // local
+      // console.log(x); //global
+
+      // let x = "global";
+
+      // IIFE(IMMEDIATELY INVOKED FUNCTION EXPRESSION)
+      // (function (x) {
+      //   console.log(x);
+      // })();
+
+      // (() => console.log("run away"))();
+
+      // doingStuff();
+
+      // function confuseReader() {
+      //   x = "Guess my scope...";
+      //   console.log("Inside the function:", x);
+      // }
+
+      // confuseReader();
+      // console.log("Outside of function:", x);
+
+      // (function () {
+      //   console.log("IIFE!");
+      // })();
+
+      // function getRecursive(nr) {
+      //   console.log(nr);
+      //   if (nr > 0) {
+      //     getRecursive(--nr);
+      //   }
+      // }
+
+      // getRecursive(3);
+
+      // function logRecursive(nr) {
+      //   console.log("Started function:", nr);
+      //   if (nr > 0) {
+      //     logRecursive(nr - 1);
+      //   } else {
+      //     console.log("done with recursion");
+      //   }
+      //   console.log("Ended function:", nr);
+      // }
+
+      // logRecursive(3);
+
+      // NESTED FUNCTIONS
+      // function doOuterFunctionStuff(nr) {
+      //   console.log("Outer function");
+      //   doInnerFunctionStuff(nr);
+      //   function doInnerFunctionStuff(x) {
+      //     console.log(x + 7);
+      //     console.log("I can access outer variables:", nr);
+      //   }
+      // }
+      // doOuterFunctionStuff(2);
+
+      // function doOuterFunctionStuff(nr) {
+      //   doInnerFunctionStuff(nr);
+      //   function doInnerFunctionStuff(x) {
+      //     let z = 10;
+      //   }
+      //   console.log("Not accessible:", z);
+      // }
+      // doOuterFunctionStuff(2);
+
+      let functionVariable = function () {
+        console.log("Not so secret though.");
+      };
+
+      function doFlexibleStuff(executeStuff) {
+        executeStuff();
+        console.log("Inside doFlexibleStuffFunction.");
       }
 
-      let nums = [5, 9];
-      addTwoNumbers(...nums);
+      doFlexibleStuff(functionVariable);
 
-      function addFourNumbers(x, y, z, a) {
-        console.log(x + y + z + a);
-      }
-
-      let nums2 = [5, 9];
-
-      let nums3 = [6, 7];
-
-      addFourNumbers(...nums2, ...nums3);
-
-      function someFunction(param1, ...param2) {
-        console.log(param1, param2);
-      }
-      someFunction("hi", "there!", "How are you?");
-
-      let result = addTwoNumbers(4, 5);
-      console.log(result);
-
-      let resultsArr = [];
-
-      for (let i = 0; i < 10; i++) {
-        let result = addTwoNumbers(i, 2 * i);
-        resultsArr.push(result);
-      }
-
-      console.log(resultsArr);
+      // functionVariable();
     </script>
   </body>
 </html>
