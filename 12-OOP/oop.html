@@ -65,14 +65,115 @@
 
       let dog = new Dog("Snoop Dogg", 2.4, "brown", "chihuahua");
 
-      console.log(
-        dog.dogName,
-        "is a",
-        dog.breed,
-        "and weighs",
-        dog.weight,
-        "kg."
-      );
+      // console.log(
+      //   dog.dogName,
+      //   "is a",
+      //   dog.breed,
+      //   "and weighs",
+      //   dog.weight,
+      //   "kg."
+      // );
+
+      class Person {
+        #firstname;
+        #lastname;
+
+        constructor(firstname, lastname) {
+          if (firstname.startsWith("M")) {
+            this.#firstname = firstname;
+          } else {
+            this.#firstname = "M" + firstname;
+          }
+          this.lastname = lastname;
+        }
+
+        get firstname() {
+          return this.#firstname;
+        }
+
+        set firstname(firstname) {
+          if (firstname.startsWith("M")) {
+            this.#firstname = firstname;
+          } else {
+            this.#firstname = "M" + firstname;
+          }
+          this.lastname = lastname;
+        }
+
+        get lastname() {
+          return this.#lastname;
+        }
+
+        set lastname(lastname) {
+          this.#lastname = lastname;
+        }
+
+        greet() {
+          console.log("Hi there! I'm", this.firstname, this.lastname);
+        }
+
+        compliment(name, object) {
+          return "That's a wonderful " + object + ", " + name;
+        }
+      }
+
+      let p = new Person("ike", "Doe");
+
+      // PROTOTYPE
+      Person.prototype.favoriteColor = "green";
+      Person.prototype.introduce = function () {
+        console.log("Let me introduce myself. I'm", p.firstname , p.favoriteColor);
+      };
+      // p.lastname = "Jane";
+      //console.log("Hi", p.firstname, p.lastname);
+      //p.greet();
+      //let compliment = p.compliment("Harry", "hat");
+      //console.log(compliment);
+      //console.log(p.favoriteColor);
+      p.introduce();
+
+      // INHERITANCE
+      class Vehicle {
+        constructor(color, currentSpeed, maxSpeed) {
+          this.color = color;
+          this.currentSpeed = currentSpeed;
+          this.maxSpeed = maxSpeed;
+        }
+
+        move() {
+          console.log("moving at", this.currentSpeed);
+        }
+
+        accelerate(amount) {
+          this.currentSpeed += amount;
+        }
+      }
+
+      class Motorcycle extends Vehicle {
+        constructor(color, currentSpeed, maxSpeed, fuel) {
+          super(color, currentSpeed, maxSpeed);
+          this.fuel = fuel;
+        }
+        doWheelie() {
+          console.log("Driving on one wheel at current speed of", this.currentSpeed);
+        }
+      }
+
+      class GrandVehicle extends Motorcycle {
+        constructor(color, currentSpeed, maxSpeed, fuel) {
+          super(color, currentSpeed, maxSpeed, fuel);
+        }
+      }
+
+      // let motor = new Motorcycle("Black", 0, 250, "gasoline");
+      // console.log(motor.color);
+      // motor.accelerate(100);
+      // motor.move();
+
+      let vh = new GrandVehicle("black", 50, 250, "Petrol");
+      vh.doWheelie();
+
+      // PROTOTYPE
     </script>
   </body>
 </html>
