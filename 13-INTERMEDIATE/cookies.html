@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookies</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
+
+      div {
+        background-color: purple;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+
+      .box {
+        height: 200px;
+        width: 200px;
+        padding: 20px;
+        margin: 0 50px;
+        display: inline-block;
+        border: 1px solid black;
+      }
+
+      #dragme {
+        background-color: red;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        color: white;
+        text-align: center;
+      }
+
+      h2 {
+        color: white;
+        font-size: 30px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>USING COOKIES IN JAVASCRIPT</h1>
+    <input onchange="setCookie(this)" />
+    <button onclick="sayHi('name')">Let's talk, cookie!</button>
+    <p id="hi"></p>
+
+    <div id="stored"></div>
+
+    <script>
+        // CREATING A COOKIE
+        // document.cookie = "name=Maaike;favoriteColor=black";
+
+        // let cookie = decodeURIComponent(document.cookie); 
+        // let cookieList = cookie.split(";");
+        // for (let i = 0; i < cookieList.length; i++) {
+        //     let c = cookieList[i];
+        //     if (c.charAt(0) == " ") { 
+        //         c = c.trim(); 
+        //     }
+        //     if (c.startsWith("name")) {
+        //         alert(c.substring(5, c.length)); 
+        //     }
+        // }
+
+        function setCookie(e) {
+            document.cookie = "name=" + e.value + ";";
+        }
+
+        function sayHi(key) { 
+            let name = getCookie(key);
+            document.getElementById("hi").innerHTML = "Hi " + name; 
+        }
+
+        function getCookie(key) {
+            let cookie = decodeURIComponent(document.cookie);
+            let cookieList = cookie.split(";");
+            for (let i = 0; i < cookieList.length; i++) {
+                let c = cookieList[i];
+                if (c.charAt(0) == " ") {
+                    c = c.trim();
+                }
+                if (c.startsWith(key)) {
+                    console.log("hi" + c);
+                    return c.substring(key.length + 1, c.length);
+                }
+            }
+        }
+
+        // USING LOCAL STORAGE
+        let message = "Hello storage!";
+        localStorage.setItem("example", message);
+
+        if (localStorage.getItem("example")) { 
+            document.getElementById("stored").innerHTML = localStorage.getItem("example"); 
+        }
+    </script>
+  </body>
+</html>
