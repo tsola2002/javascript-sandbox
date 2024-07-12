@@ -54,14 +54,20 @@
     <h1>DEBUGGING</h1>
 
     <script>
-        "use strict";
+        const measureKelvin = function(){
+          const measurement = {
+            type: 'temp',
+            unit: 'celcius',
+            value: Number(prompt('Degrees Celcius'))
+          };
 
-        function sayHi(){
-            greeting = "Hello";
-            console.log(greeting);
+          // debugger;
+          const kelvin = measurement.value + 10;
+          // debugger;
+          return kelvin;
         }
 
-        sayHi();
+        console.log(measureKelvin());
     </script>
   </body>
 </html>
