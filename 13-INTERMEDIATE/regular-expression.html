@@ -57,64 +57,90 @@ REGULAR EXPRESSIONS
 
     <script>
 
-        let text = "I love JavaScript!";
+        let text = "I love JavaScript! and java is awesome";
+        let node = "i love react and javascript and nodejs";
+        let letter = "R";
+        let digit = "3";
+        let special = "äé!";
+        let dotSentence = "Hi how are you?";
+        let age = "I'm 29 years old.";
+        let nr = 357;
+        let love = "I javascript spiders";
+        let alpha = "d56";
+        let greeting = "You are doing great!";
+        let multistring = "a";
+        let sequence = "abcabcabc";
+        let newSentence = "Coding is fun. Coding opens up a lot of opportunities. Coding can change your life";
 
+        // will match case sensitive string
+        //console.log(text.match(/javascript/));
 
-        console.log(text.match(/javascript/));
+        // will do a case-insensitive match
+        //console.log(text.match(/javascript/i));
 
-        console.log(text.match(/javascript/i));
+        // this will match against mutiple options
+        // console.log(node.match(/javascript|nodejs|react/i));
 
-        console.log(text.match(/javascript|nodejs|react/i));
+        // this will match all options using global modifier
+        //console.log(node.match(/javascript|nodejs|react/gi));
 
-        console.log(text.match(/javascript|nodejs|react/i));
+        //console.log(letter.match(/[pqrst]/));
 
-        console.log(text.match(/javascript|nodejs|react/gi));
+        // checks for a range of letter
+        //console.log(letter.match(/[p-t]/));
 
-        console.log(text.match(/[abc]/));
+        // checks for a range of numbers
+        //console.log(digit.match(/[0-5]/));
 
-        console.log(text.match(/[abcd]/));
+        // console.log(letter.match(/[a-zA-Z0-9]/));
 
-        console.log(text.match(/[a-d]/));
+        // match special characters using a wildcard
+        //console.log(special.match(/./g));
 
-        console.log(text.match(/[a-zA-Z]/));
+        // this will escape a specified special character
+        //console.log(dotSentence.match(/\?/g));
 
-        console.log(text.match(/[a-z]/i));
+        // this will match any digit
+        //console.log(age.match(/\d/g));
 
-        console.log(text.match(/[a-zA-Z0-9]/));
+        // this will match whitespaces
+        //console.log(age.match(/\s/g));
 
-        console.log(text.match(/[a-zA-Z0-9]/));
+        // this will match letters at the beginning of a word
+        //console.log(text.match(/\bjava/gi));
 
-        console.log(text.match(/./g));
+        // matching this way will not support numbers
+        // console.log(nr.match(/3/g));
 
-        console.log(text.match(/\./g));
+        // will match a group of characters
+        //console.log(love.match(/(love|dislike|javascript)\s(javascript|spiders)/gi));
 
-        console.log(text.match(/\d/g));
+        // this will match 4 repeating ranges
+        //console.log(alpha.match(/[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z09]/g));
 
-        console.log(text.match(/\s/g));
+        
+        //console.log(greeting.match(/n?g/gi));
 
-        console.log(text.match(/\bin/gi));
+        // this will match 123 with occurences
+        //console.log(multistring.match(/(123)+/));
 
-        console.log(nr.match(/3/g));
+        // this will match a preceded by 123
+        //console.log(multistring.match(/(123)*a/));
 
-        console.log(text.match(/(love|dislike)\s(javascript|spiders)/gi));
+        // this will match repeating sequences
+        //console.log(sequence.match(/(abc){1,2}/));
 
-        console.log(text.match(/[a-zA-Z0-9][a-zA-Z0-9][a-zA-Z0-9][a-zA-Z09]/g));
+        // this will match based on a named group
+        //console.log(text.match(/(?<code>javascript)/i));
 
-        console.log(text.match(/n?g/gi));
-
-        console.log(text.match(/(123)+/));
-
-        console.log(text.match(/(123)*a/));
-
-        console.log(text.match(/(abc){1,2}/));
-
-        console.log(text.match(/(?<language>javascript)/i));
-
-        console.log(text.search(/Case/i));
-
-        console.log(text.replace("Coding", "JavaScript"));
-
-        console.log(text.replace(/Coding/g, "JavaScript"));
+        // this will search for a specified string
+        //console.log(greeting.search(/great/i));
+        
+        // this will find and replace the first occurence of the string
+        //console.log(newSentence.replace("Coding", "JavaScript"));
+        
+        // this wil find and replace all occurences of the string
+        // console.log(newSentence.replace(/Coding/g, "JavaScript"));
     </script>
   </body>
 </html>
