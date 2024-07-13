@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Callback functions</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
+
+      div {
+        background-color: purple;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+
+      .box {
+        height: 200px;
+        width: 200px;
+        padding: 20px;
+        margin: 0 50px;
+        display: inline-block;
+        border: 1px solid black;
+      }
+
+      #dragme {
+        background-color: red;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        color: white;
+        text-align: center;
+      }
+
+      h2 {
+        color: white;
+        font-size: 30px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CALLBACK FUNCTIONS</h1>
+
+    <script>
+        
+        function judge(grade) {
+            switch (true) { 
+                case grade == "A":
+                    console.log("You got an", grade, ": amazing!");
+                    break;
+                case grade == "B":
+                    console.log("You got a", grade, ": well done!");
+                    break; 
+                case grade == "C":
+                    console.log("You got a", grade, ": alright.");
+                    break;
+                case grade == "D":
+                    console.log("You got a", grade, ": hmmm...");
+                    break;
+                default:
+                    console.log("An", grade, "! What?!");
+            }
+        }
+
+        function getGrade(score, callback) { 
+            let grade; 
+            switch (true) { 
+                case score >= 90:
+                    grade = "A";
+                    break;
+                case score >= 80:
+                    console.log(score);
+                    grade = "B";
+                    break;
+                case score >= 70:
+                    grade = "C";
+                    break;
+                case score >= 60:
+                    grade = "D";
+                    break;
+                default:
+                    grade = "F";
+            } 
+            
+            callback(grade);
+
+        }
+
+        // judge function is stored in a callback
+        //getGrade(85, judge);
+
+
+        // SET INTERVAL FUNCTION
+        // setInterval(encourage, 5000);
+
+        // function encourage() { 
+        //     console.log("You're doing great, keep going!");
+        // }
+
+
+
+    </script>
+  </body>
+</html>
