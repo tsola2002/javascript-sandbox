@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(to top left, #28b487, #7dd56f);
+      }
+
+      div {
+        background-color: purple;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+      }
+
+      .box {
+        height: 200px;
+        width: 200px;
+        padding: 20px;
+        margin: 0 50px;
+        display: inline-block;
+        border: 1px solid black;
+      }
+
+      #dragme {
+        background-color: red;
+      }
+
+      h1 {
+        font-family: sans-serif;
+        font-size: 50px;
+        line-height: 1.3;
+        width: 100%;
+        padding: 30px;
+        color: white;
+        text-align: center;
+      }
+
+      h2 {
+        color: white;
+        font-size: 30px;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>USING PROMISES</h1>
+
+    <script>
+        
+        
+     
+    // A Promise is a special object that connects 
+    // code that needs to produce a result and the code that needs 
+    // to use this result in the next step.
+
+    // let promise = new Promise(function (resolve, reject) { 
+    //     // do something that might take a while
+    //     // let's just set x instead for this example
+    //     let x = 20;
+    //     if (x > 10) {
+    //         // value x is a placeholder
+    //         resolve(x); // on success 
+    //     } 
+    //     else {
+    //         reject("Too low"); // on error 
+    //     }
+    // });
+
+    // when you know the value of the x
+    // run one of two functions based on whether 
+    // it was a success (resolved) or a failure (rejected)
+    // promise.then( 
+    //     function (value) { 
+    //         console.log("Success:", value); 
+    //     }, 
+    //     function (error) { 
+    //         console.log("Error:", error); 
+    //     }
+    // );
+
+    const promise = new Promise((resolve, reject) => { 
+        resolve("success!"); 
+    })
+    promise.then(value => { 
+        console.log(value);
+        return "we";
+    })    
+    .then(value => {
+        console.log(value);
+        return "can";
+    }) 
+    .then(value => {
+        console.log(value);
+        return "chain";
+    })
+    .then(value => {
+        console.log(value);
+        return "promises";
+    })
+    .then(value => {
+        console.log(value);
+    })
+    .catch(value => {
+        console.log(value);
+    })
+
+    </script>
+  </body>
+</html>
