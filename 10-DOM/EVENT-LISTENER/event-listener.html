@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working With Event Listeners</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to top left, #28b487, #7dd56f);
+        }
+
+        h1{
+            font-family: sans-serif;
+            font-size: 50px;
+            line-height: 1.3;
+            width: 100%;
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //TYPES OF EVENTS
+        // focus 
+        // blur
+        // mouseout
+        // mouseover
+        // keydown
+        // keyup
+
+        //anything in this function will happen after the page fully loads
+        window.onload = function(){
+            //adding an event Listener
+            document.getElementById("square").addEventListener("mouseout", changeColor);
+        }
+
+        function changeColor(){
+            let red = Math.floor(Math.random() * 255);
+            let green = Math.floor(Math.random() * 255);
+            let blue = Math.floor(Math.random() * 255);
+            this.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        }
+
+        function addRandomNumber(){
+
+            let el = document.createElement("p");
+            el.innerText = Math.floor(Math.random() * 100);
+            document.body.appendChild(el);
+            
+        }
+
+        
+    </script>
+    <h1>Working With Event Listeners</h1>
+    <div id="square" style="width:100px;height:100px;background-color:grey;">Click For Magic</div>
+    <button onclick="addRandomNumber()">Add a number</button> 
+
+   
+    
+</body>
+</html>

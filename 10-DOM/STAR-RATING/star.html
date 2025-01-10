@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Star Rater</title>
+    <style>
+        .stars ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .star {
+            font-size: 2em;
+            color: #ddd;
+            display: inline-block;
+        }
+        .orange {
+            color: orange;
+        }
+        .output {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <ul class="stars">
+        <li class="star">&#10029;</li>
+        <li class="star">&#10029;</li>
+        <li class="star">&#10029;</li>
+        <li class="star">&#10029;</li>
+        <li class="star">&#10029;</li>
+    </ul>
+    <div class="output"></div>
+    <script>
+
+            
+    //1. SELECT UL WITH CLASS OF stars
+    const starsUL = document.querySelector(".stars");
+
+
+    // CREATE OUTPUT OBJECT FOR THE OUTPUT ELEMENT
+    const output = document.querySelector(".output");
+
+    // 2. elements with a class of star.
+    const stars = document.querySelectorAll(".star");
+        
+    // 3. Loop through the resulting node list, adding to the element object the value
+    // of the index plus 1, and adding an event listener listening for a click. Attach a
+    // function called starRate() to the click event of each star element.
+    stars.forEach((star, index, e) => {
+            star.starValue = (index + 1);
+            star.addEventListener("click", starRate); 
+            
+    });
+
+
+    // 4. function, add to the output the value of the star using 
+    // the event target and the element object's star value
+    function starRate(e){
+        output.innerHTML = `You Rated this ${e.target.starValue} stars`;
+
+        stars.forEach((star, index) => {
+            if(index < e.target.starValue){
+                star.classList.add("orange");
+            }else {
+                star.classList.remove("orange");
+            }    
+        });
+
+    }
+    </script>
+</body>
+</html>

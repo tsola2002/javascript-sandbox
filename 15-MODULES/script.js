@@ -16,9 +16,9 @@ import add, { cart } from './shoppingCart.js';
 // addToCart('bread', 5);
 // console.log(price, tq);
 
-add('pizza', 2);
-add('bread', 5);
-add('apples', 3);
+// add('pizza', 2);
+// add('bread', 5);
+// add('apples', 3);
 
 console.log(cart);
 

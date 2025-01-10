@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Element</title>
+    <title>Element Manipulation using javascript</title>
     <style>
-        body {
+        body{
             height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             background: linear-gradient(to top left, #28b487, #7dd56f);
         }
@@ -25,13 +24,19 @@
     </style>
 </head>
 <body>
-    <h1>Creating Element from Javascript</h1>
+    <h1>Element Manipulation using javascript</h1>
     <script>
-        // function addRandomNumber(){ 
-        //     let el = document.createElement("p");
-        //     el.innerText = Math.floor(Math.random() * 100);
-        //     document.body.appendChild(el);
-        // }
+        function toggleDisplay(){
+            let p = document.getElementById("magic");
+
+            if(p.style.display === "none"){
+                p.style.display = "block";
+            } else {
+                p.style.display = "none";
+            }
+        }
     </script>
+    <p id="magic">I will disappear and appear</p>
+    <button onclick="toggleDisplay()">Magic</button>
 </body>
 </html>

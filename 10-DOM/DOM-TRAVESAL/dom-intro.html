@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Element</title>
+    <title>DOM</title>
     <style>
-        body {
+        body{
             height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             background: linear-gradient(to top left, #28b487, #7dd56f);
         }
@@ -25,14 +24,23 @@
     </style>
 </head>
 <body>
-    <h1>Creating Element from Javascript</h1>
-    <button onclick="addRandomNumber()">Add a number</button>
-    <script>
-        function addRandomNumber(){ 
-            let el = document.createElement("p");
-            el.innerText = Math.floor(Math.random() * 100);
-            document.body.appendChild(el);
-        }
-    </script>
+    <h1>Let's find the treasure</h1>
+    <div id="forest">
+      <div id="tree1">
+        <div id="squirrel"></div>
+        <div id="flower"></div>
+      </div>
+      <div id="tree2">
+        <div id="shrubbery">
+          <div id="treasure"></div>
+        </div>
+        <div id="mushroom">
+          <div class="insect">spiders</div>
+          <div id="bug">shola</div>
+        </div>
+      </div>
+      <div id="zap"></div>
+    </div>
+    <script src="./dom-intro.js"></script>
 </body>
 </html>

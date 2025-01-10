@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with click Handlers</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(to top left, #28b487, #7dd56f);
+        }
+
+        h1{
+            font-family: sans-serif;
+            font-size: 50px;
+            line-height: 1.3;
+            width: 100%;
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body> 
+    <div class="zap">
+        <h1 id="handler" onclick="reveal(this)">click Handler 2</h1>
+    </div>
+    <!-- <h1 onclick="alertBox()">Click Handler</h1> -->
+    <!-- <h1 onclick="alert('Your First Click Handler')">Working With Click Handlers</h1> -->
+
+    <button>Click Here</button>
+    <script>
+
+        // function alertBox(){
+        //     alert("Click Handler using external Function");
+        // }
+
+        function reveal(el){
+            console.log(el);
+        }
+
+        //  function reveal(el){
+        //     console.log(el.parentElement);
+        // }
+
+        // document.getElementsByTagName("h1").item(0).onclick = function(){
+        //     alert("Click Handler From inside javascript code");
+        // }
+
+    </script>
+</body>
+</html>

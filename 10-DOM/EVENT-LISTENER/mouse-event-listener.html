@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BOM</title>
+    <title>Working With Mouse Event Listeners</title>
     <style>
-        body {
+        body{
             height: 100vh;
             display: flex;
             align-items: center;
@@ -24,8 +24,15 @@
     </style>
 </head>
 <body>
-    <h1 class="output">BROWSER OBJECT MODEL</h1>
-    <div class="output">Test Code</div>
-    <script src="./bom.js"></script>
+    
+    <h1>Working With Mouse Event Listeners</h1>
+    <div id="divvy" onmouseover="changeColor()" style="width: 100px;height: 100px;background-color: pink;"></div>
+    <script>
+
+        function changeColor(){
+            document.getElementById("divvy").style.backgroundColor = "blue";
+        }
+   
+    </script>
 </body>
 </html>
