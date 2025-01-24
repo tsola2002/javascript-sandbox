@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+    <title>JavaScript Course</title>
+    <style>
+        .hide {
+            display: none;
+        }
+        .error {
+            color: red;
+            font-size: 0.8em;
+            font-family: sans-serif;
+            font-style: italic;
+        }
+        input {
+            border-color: #ddd;
+            width: 400px;
+            display: block;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <form name="myform">
+    Email :
+    <input type="text" name="email"> <span class="error hide"></span>
+    <br> 
+
+    Password :
+    <input type="password" name="password"> <span class="error hide"></span>
+    <br>
+
+    User Name :
+    <input type="text" name="userName"> <span class="error hide"></span>
+    <br>
+
+    <input type="submit" value="Sign Up"> 
+    </form>
+    <script>
+
+    /*1.Using JavaScript, select all the page elements and set them as JavaScript
+    objects so they are easier to select within the code. Also select all the page
+    elements that have the error class as an object.*/
+
+    const myForm = document.querySelector("form");
+    const inputs = document.querySelectorAll("input");
+    const errors = document.querySelectorAll(".error");
+    const required  = ["email", "userName"];
+
+    /*2. Add an event listener to submit and capture the click, preventing the default
+    form action. */
+
+    myForm.addEventListener("submit", validation);
+
+    /*3. Loop through all the page elements that have a class error and add the hide
+    class, which will remove them from view since this is a new submission.*/
+
+    function validation(e){
+        //creating an empty object
+        let data = {};
+        e.preventDefault();
+        errors.forEach(function(item){
+            item.classList.add(".hide");
+        });
+        
+        let error = false;
+        inputs.forEach(function(el){
+            // this will capture the attribute name of the input tag
+            let tempName = el.getAttribute("name");
+            // if text has been entered into the form
+            if(tempName != null) {
+                el.style.borderColor = "#ddd";
+                // check the length of the text and that the name attribute has been included
+                if(el.value.length == 0 && required.includes(tempName)) {
+                    addError(el, "Required Field", tempName);
+                    error = true;
+                }
+                /*4. Using the regular expression for valid emails, test the results against the
+                input value of the email field.*/
+
+                 /*6. If there is an error that an input does not match the desired regex, pass the
+                parameters to the error handling function you just created.*/
+                if(tempName == "email"){
+                    let emailRegex = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[A-Za-z0-9]+)\w+/;
+                    let result = emailRegex.test(el.value);    
+                    // if pattern matching is false
+                    if(!result){
+                        addError(el, "Invalid Email", tempName);
+                        error = true;
+                    }
+                }
+
+                 /*7. Check the password field input value to ensure only letters and numbers 
+                are used. Also check the length to ensure that it is 3-8 characters. If either are 
+                false, then add the error with the error function and create a message for the
+                user. Set the error Boolean to true.*/
+
+                // validate password
+                if(tempName == "password"){
+                    let passwordRegex = /[A-Za-z0-9]+$/;
+                    let result = passwordRegex.test(el.value);
+                    // if pattern matching is false
+                    if(!result){
+                        addError(el, "Only Numbers and Letters", tempName);
+                        error = true;
+                    }
+
+                    // check the value that the password its between 3-9 characters
+                    if(!(el.value.length > 3 && el.value.length < 9)){
+                        addError(el, "Needs to be between 3-8 Characters", tempName);
+                        error =  true;
+                    }
+                }
+
+            }
+
+            data[tempName] = el.value;
+        });
+
+        /*9. Before the end of the validation function, check if an error is still present, and
+        if it is not, submit the form object. */
+        // if theres no error on the form at all
+        if(!error){
+            myForm.submit();
+            console.log("FORM SUBMISSION SUCCESSFULLY");
+            alert("FORM SUBMISSION SUCCESSFUL");
+        }
+    }
+
+     /*5. Create a function to respond to errors, which removes the hide class from
+    the element next to the element that triggered the event. Apply focus to that
+    element within the function.*/
+    function addError(el, mes, fieldName){
+        let temp = el.nextElementSibling;
+        temp.classList.remove("hide");
+        temp.textContent = fieldName.toUpperCase() + " " + mes;
+        el.style.borderColor = "red";
+        el.focus();
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Methods</title>
+</head>
+<body>
+    <h1>Date Methods</h1>
+    <script>   
+        // let currentDateTime = new Date();
+        // THIS WILL LOG THE CURRENT DATE AND TIME
+        // THIS USES THE CONSTRUCTOR
+        // console.log("CURRENT DATE",currentDateTime);
+
+
+        // let now2 = Date.now();
+        // THIS WILL LOG CURRENT DATE AND TIME USING
+        // THE UNIX TIMESTAMP
+        //console.log(now2);
+
+        // let milliDate = new Date(3000);
+        // console.log("CURRENT DATE + 1000 MILLI",milliDate);
+
+        // CONVERTING A STRING TO A DATE
+        // let stringDate = new Date("Sat Jun 06 2021 12:40:12 GMT+0200");
+        // console.log(stringDate);
+
+        //SPECIFYING VALUES USING THE CONSTRUCTOR
+        // let specificDate = new Date(2022, 1, 10, 12, 10, 15, 100);
+        // console.log(specificDate);
+
+        //GTTING AND SETTING ELEMENTS OF A DATE
+        let d = new Date();
+        // console.log("Day of week:", d.getDay());
+        // console.log("Day of month:", d.getDate());
+        // console.log("Month:", d.getMonth());
+        // console.log("Year:", d.getFullYear());
+        // console.log("Seconds:", d.getSeconds());
+        // console.log("Milliseconds:", d.getMilliseconds());
+        // console.log("Time:", d.getTime());
+
+        //SETTING INDIVIDUAL VALUES
+        // d.setFullYear(2020);
+        // console.log(d);
+
+        // d.setMonth(10);
+        // console.log(d);
+
+        // d.setDate(13);
+        // console.log(d);
+
+        // d.setHours(10);
+        // console.log(d);
+
+        // d.setTime(1622889770682);
+        // console.log(d);
+
+        // THIS WILL CONVERT STRING DATE TO
+        // UNIX TIMESTAMP 
+        // let d1 = Date.parse("June 5, 2021");
+        // console.log(d1);
+
+        //CONVERT DATE TO TIMESTAMP TOO
+        // let d2 = Date.parse("6/5/2021");
+        // console.log(d2);
+
+        //CONVERT DATE BACK TO STRING
+        // let d2String = 1622851200000;
+        // console.log(d.toDateString());
+
+        // CONVERTS DATE TO A DIFFERENT FORMATTED STRING
+        //console.log(d.toLocaleDateString());
+
+    </script>
+</body>
+</html>

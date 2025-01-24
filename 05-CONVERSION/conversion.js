@@ -8,12 +8,14 @@ const year = '1991';
 const age = 23;
 
 console.log(typeof year);
+//CONVERTS FROM STRING TO NUMBER
 const convertedYear = Number(year);
 console.log(typeof convertedYear);
 
 const fraud = 419;
 console.log(typeof fraud);
 
+// CONVERTS FROM NUMBER TO STRING
 const convertedFraud = String(fraud);
 console.log(typeof convertedFraud);
 
