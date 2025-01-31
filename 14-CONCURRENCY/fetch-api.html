@@ -76,20 +76,20 @@
     <script>
         
         const request = fetch('https://restcountries.com/v3.1/name/portugal');
-        console.log(request);
+        console.log("REQUEST OBJECT",request);
 
         const getCountryData = function (country) {
             // the fetch function will return a promise
             fetch(`https://restcountries.com/v3.1/name/${country}`)
             // we handle a promise using the then method
                 .then( function (response){
-                    console.log(response);
                     // we call json methods to read data from the response which returns another promise
                     return response.json();
+                    //console.log("RESPONSE DATA", response);
                 })
-                // the result of thw previous promise will be fed to then method
+                // the result of thweprevious promise will be fed to then method
                 .then(function(data) {
-                    console.log(data);
+                    console.log("RESPONSE DATA",data);
                     //renderCountry(data[0]);
                 });
         }
